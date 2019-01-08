@@ -6,7 +6,7 @@ volumes:
 
 services:
     slim:
-        image: php:7-alpine
+        build: .
         working_dir: /var/www
         command: php -S 0.0.0.0:8080 -t public
         environment:
@@ -24,3 +24,4 @@ services:
             - 3306:3306 
         environment:
             - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=users-training
